@@ -25,8 +25,8 @@ public class InscripcionTest {
 
     @Test
     public void testInscripcionAceptada() {
-        alumno.aprobarMateria(algoritmos);
-        alumno.aprobarMateria(paradigmas);
+        alumno.agregarMateriaAprobada(algoritmos);
+        alumno.agregarMateriaAprobada(paradigmas);
 
         Inscripcion inscripcion = new Inscripcion(diseñoSistemas, alumno);
         assertTrue(inscripcion.aprobada());
@@ -34,7 +34,7 @@ public class InscripcionTest {
 
     @Test
     public void testInscripcionRechazada() {
-        alumno.aprobarMateria(algoritmos);
+        alumno.agregarMateriaAprobada(algoritmos);
 
         Inscripcion inscripcion = new Inscripcion(diseñoSistemas, alumno);
         assertFalse(inscripcion.aprobada());
