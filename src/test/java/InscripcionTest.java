@@ -1,9 +1,12 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import utn.Alumno;
 import utn.Inscripcion;
 import utn.Materia;
+
+import java.util.HashSet;
 
 public class InscripcionTest {
 
@@ -14,7 +17,7 @@ public class InscripcionTest {
 
     @Before
     public void setUp() {
-        alumno = new Alumno("Juan Perez");
+        alumno = new Alumno(new HashSet<>());
         algoritmos = new Materia("Algoritmos y Estructuras de Datos");
         paradigmas = new Materia("Paradigmas de Programación");
         diseñoSistemas = new Materia("Diseño de Sistemas");
