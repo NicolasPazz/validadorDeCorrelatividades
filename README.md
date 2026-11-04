@@ -1,20 +1,20 @@
-# Validador de correlatividades
+# Course Prerequisite Validator
 
-Modelo en Java que decide si un alumno puede inscribirse a una materia según sus correlativas: la inscripción se acepta solo si el alumno aprobó todas las materias correlativas de la materia elegida.
+Small Java model that decides whether a student can enroll in a university course: the enrollment is accepted only if the student has passed every prerequisite ("correlativa") of that course.
 
-Ejercicio de diseño orientado a objetos (UTN FRBA – Diseño de Sistemas).
+Object-oriented design exercise for the Systems Design course at UTN FRBA.
 
-## Modelo
+## Model
 
-- **Materia**: nombre y conjunto de correlativas. Sabe responder si un alumno tiene todas sus correlativas aprobadas.
-- **Alumno**: conjunto de materias aprobadas.
-- **Inscripcion**: vincula alumno y materia, y delega en la materia la validación (`aprobada()`).
+- `Materia` (course): name and set of prerequisite courses. Knows whether a student has passed all of them.
+- `Alumno` (student): set of passed courses.
+- `Inscripcion` (enrollment): links a student and a course, and delegates the check to the course (`aprobada()`).
 
-![Diagrama de clases](https://github.com/user-attachments/assets/f7b2d98c-8624-4739-82f7-4ec80788ddb6)
+![Class diagram](https://github.com/user-attachments/assets/f7b2d98c-8624-4739-82f7-4ec80788ddb6)
 
 ## Tests
 
-Tests con JUnit 4 que cubren una inscripción aceptada y una rechazada:
+JUnit 4 tests cover an accepted and a rejected enrollment:
 
 ```bash
 mvn test
